@@ -6,12 +6,38 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
+        %span.icon-bar
       %span.navbar-brand=link_to "Ironwood", home_path
     #home_page_nav_collapse.collapse.navbar-collapse
       %ul.nav.navbar-nav#nav_menu_links
-        %li.nav_menu_item=link_to "menu1"
-        %li.nav_menu_item=link_to "menu2"
-        %li.nav_menu_item=link_to "menu3"
+        %li.dropdown.nav_menu_item
+          %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+            CC&R
+            %b.caret
+          %ul.dropdown-menu
+            %li=link_to "By-Laws", by_laws_path
+            %li=link_to "Policies", policies_path
+            %li=link_to "Swimming", swimming_path
+            %li=link_to "Parking", parking_path
+            %li=link_to "Pets", pets_path
+            %li=link_to "HOA Dues", hoa_dues_path
+        %li.nav_menu_item=link_to "Contacts", contacts_path
+        %li.dropdown.nav_menu_item
+          %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+            Homeowners
+            %b.caret
+          %ul.dropdown-menu
+            %li=link_to "Board Meeting Minutes", board_meeting_minutes_path
+            %li=link_to "Homeowners Directory", homeowners_path
+            %li=link_to "Budget", budgets_path
+        %li.dropdown.nav_menu_item
+          %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+            FAQ
+            %b.caret
+          %ul.dropdown-menu
+            %li=link_to "FAQs", faqs_path
+            %li=link_to "Pictures", pictures_path
+            %li=link_to "Upkeep", upkeep_path
         %li.nav_sign_in=link_to "sign in", '#', data: {toggle: 'modal', target: '#sign_in_modal'}
 
 =render 'shared/modal'
