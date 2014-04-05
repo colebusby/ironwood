@@ -1,0 +1,17 @@
+%nav#nav_bar.nav.navbar-inverse{role: 'navigation'}
+  .container-fluid
+    .navbar-header
+      %button.navbar-toggle{type: "button", data: {target: "#home_page_nav_collapse", toggle: "collapse"}}
+        %span.sr-only Toggle Navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %span.navbar-brand=link_to "Ironwood", home_path
+    #home_page_nav_collapse.collapse.navbar-collapse
+      %ul.nav.navbar-nav#nav_menu_links
+        %li.nav_menu_item=link_to "menu1"
+        %li.nav_menu_item=link_to "menu2"
+        %li.nav_menu_item=link_to "menu3"
+        %li.nav_sign_in=link_to "sign in", '#', data: {toggle: 'modal', target: '#sign_in_modal'}
+
+=render 'shared/modal'

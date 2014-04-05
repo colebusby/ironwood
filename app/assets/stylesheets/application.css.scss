@@ -1,0 +1,53 @@
+/* defines */
+
+/*------------------------------------------------------------------*/
+
+$container-large-desktop: 100%;
+
+@import "bootstrap";
+
+/* navbar */
+
+/*------------------------------------------------------------------*/
+
+#nav_bar{
+  #nav_menu_links{
+    float: none;
+    text-align: center;
+    .nav_menu_item{
+      display: inline-block;
+      float: none;
+    }
+    .nav_sign_in{
+      float: right;
+    }
+  }
+
+}
+
+
+/* home page */
+
+/*------------------------------------------------------------------*/
+
+.home_page{
+  .home_main_images{
+    width: 100%
+  }
+  #home_info_row{
+    background-color: #000;
+    min-height: 300px;
+    height: inherit;
+  }
+  .home_panels{
+    height: 200px;
+    margin-top: 25px;
+  }
+  #home_pool_data{
+    color: #ffff19;
+    margin-top: 60px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+  }
+}

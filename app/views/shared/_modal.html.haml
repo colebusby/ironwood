@@ -1,0 +1,11 @@
+.modal.fade#sign_in_modal
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+      =bootstrap_form_for new_user_session_path do |f|
+        .modal-body
+          =f.email_field :email
+          =f.password_field :password
+        .modal-footer
+          =f.submit "Sign in"
