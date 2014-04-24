@@ -51,3 +51,74 @@ $container-large-desktop: 100%;
     text-align: center;
   }
 }
+
+/* swimming page */
+
+/*------------------------------------------------------------------*/
+
+.swimming_page{
+  background-image: url('pool.JPG');
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.pool_penalties{
+  p{
+    vertical-align: top;
+    display: inline-block;
+    max-width: 400px;
+  }
+}
+
+.pool_panels{
+  max-width: 600px;
+  margin:auto;
+  margin-top: 30px;
+  opacity: .88;
+}
+
+/* cc&r & by laws page */
+
+/*------------------------------------------------------------------*/
+
+.by_laws_page{
+  background-image: url('documents_by_storebukkebruse.jpg');
+  padding-top: 30px;
+  padding-bottom: 30px;
+  height: 1037px;
+}
+
+/* pets page */
+
+/*------------------------------------------------------------------*/
+
+.pets_page{
+  background-image: url('dog_by_will_marlow.jpg');
+  padding-top: 30px;
+  padding-bottom: 30px;
+  height: 1037px;
+}
+
+/* upkeep page */
+
+/*------------------------------------------------------------------*/
+
+#upkeep_page{
+  background-image: url('backyard_hair_cut_by_sean_hobson.jpg');
+  padding-top: 30px;
+  padding-bottom: 30px;
+  .red{
+    color: red;
+  }
+}
+
+.upkeep_owner{
+  color:blue;
+}
+
+#upkeep_panel{
+  max-width: 900px;
+  margin:auto;
+  margin-top: 30px;
+  opacity: .88;
+}
