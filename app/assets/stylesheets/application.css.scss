@@ -122,3 +122,28 @@ $container-large-desktop: 100%;
   margin-top: 30px;
   opacity: .88;
 }
+
+/* contact page */
+
+/*------------------------------------------------------------------*/
+
+#contact_page{
+  background-image: url('letter_by_RaSeLaSeD.jpg');
+  min-height: 1145px;
+}
+
+#contact_panel{
+  margin-top: 150px;
+  opacity: .8;
+}
+
+.board_pic{
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background-color:grey;
+}
+
+.contact_board{
+  display: inline-block
+}
