@@ -19,6 +19,7 @@ ruby '2.0.0'
 
 gem 'devise'
 gem 'cancancan', '~> 1.7'
+gem 'role_model'
 
 group :development do
   gem 'better_errors'

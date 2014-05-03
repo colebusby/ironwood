@@ -6,10 +6,25 @@
           %h3.text-center
             Contact
         .panel-body
-          .board_pic.text-center.contact_board
-            picture here
-          %p.contact_board
-            contact info here
-          %form.clear
-            .form-group
-
+          -if current_user.has_role?(:home_owner) || current_user.has_role?(:admin)
+          -else
+            .board_pic.text-center.contact_board
+              =image_tag 'cole.JPG', class: 'board_pic'
+            %p.contact_board#contact_board_text
+              Association President<br>
+              John Doe<br>
+            %h4.clear
+              Want to know more? Please send us your question and we will get back to you as soon as we can:
+            =form_tag send_question_path do
+              %form
+                .form-group
+                  =label_tag :name, 'Your Name'
+                  =text_field_tag :name
+                .form-group
+                  =label_tag :email, 'Your Email'
+                  =text_field_tag :email, nil, type: 'email'
+                .form-group
+                  =label_tag :question, 'Your Question'
+                  =text_area_tag :question, nil, id: 'contact_question_area'
+                .form-group
+                  =submit_tag 'Send Question', class: 'btn'

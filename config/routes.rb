@@ -20,6 +20,7 @@ Ironwood::Application.routes.draw do
 
   #Contacts
   get 'contacts', to: 'contacts#index'
+  post 'send_question', to: 'contacts#send_question'
 
   #Homeowners
   resources :board_meeting_minutes, only: [:index]
