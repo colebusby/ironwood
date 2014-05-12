@@ -19,4 +19,7 @@ class User < ActiveRecord::Base
     end
     board_members
   end
+
+  has_many :board_positions
+
 end

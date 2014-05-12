@@ -6,7 +6,7 @@
           %h3.text-center
             Contact
         .panel-body
-          -if current_user.has_role?(:home_owner) || current_user.has_role?(:admin)
+          -if current_user && (current_user.has_role?(:home_owner) || current_user.has_role?(:admin))
           -else
             .board_pic.text-center.contact_board
               =image_tag 'cole.JPG', class: 'board_pic'
@@ -14,7 +14,7 @@
               Association President<br>
               John Doe<br>
             %h4.clear
-              Want to know more? Please send us your question and we will get back to you as soon as we can:
+              Want to know more? Please send me your question and I will get back to you as soon as I can:
             =form_tag send_question_path do
               %form
                 .form-group
