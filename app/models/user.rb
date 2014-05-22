@@ -21,5 +21,14 @@ class User < ActiveRecord::Base
   end
 
   has_many :board_positions
+  has_many :residents
+
+  def email_required?
+    false
+  end
+
+  def email_changed?
+    false
+  end
 
 end

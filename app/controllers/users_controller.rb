@@ -4,7 +4,11 @@ class UsersController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
   private
+
   def find_model
     @user = User.find(params[:id]) if params[:id]
   end

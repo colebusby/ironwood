@@ -1,0 +1,41 @@
+%table.table.table-hover
+  %thead
+    %th
+      Resident(s)
+    %th
+      Phone 1
+    %th
+      Phone 2
+    %th
+      Address
+    %th
+      E-mail
+    -if current_user.has_role?(:admin)
+      %th
+        Manage
+  %tbody
+    -@users.each do |user|
+      %tr
+        / Residents
+        %td
+          -if user == current_user || current_user.has_role?(:admin)
+            =link_to "Edit", user_residents_path(user), class: 'btn btn-default btn-sm'
+
+        / Phone 1
+        %td
+
+        / Phone 2
+        %td
+
+        / Address
+        %td
+          =user.address.upcase
+
+        / E-mail
+        %td
+          =user.email
+
+        -if current_user.has_role?(:admin)
+          / Manage
+          %td
+            =link_to "Manage", user_path(user), class: 'btn btn-default'
