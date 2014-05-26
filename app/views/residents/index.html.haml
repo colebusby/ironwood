@@ -1,1 +1,51 @@
-hello
+.container
+  .row
+    .panel.panel-default#residents_main_panel
+      .panel-heading
+        %h3
+          ="Residents living at #{@user.readable_address}"
+        %button.btn.btn-success.pull-right{'data-toggle' => 'modal', 'data-target' => '#add_resident_modal'}
+          Add Resident
+      .panel-body
+        -if @user.residents.present?
+          -@user.residents.each do |resident|
+            .panel.panel-success.resident_data_panel
+              .panel-heading
+                %h4="#{resident.first_name} #{resident.last_name}"
+                =link_to "edit", edit_resident_path(resident), class: 'pull-right btn btn-default'
+              .panel-body
+                %p Email: #{resident.phone1.present? ? resident.email : 'none'}
+                -if resident.receive_notifications
+                  %p.text-success this email receives notifications
+                -else
+                  %p.text-danger this email does not receive notifications
+                %p Phone 1: #{resident.phone1.present? ? resident.phone1 : 'none'}
+                %p Phone 2: #{resident.phone2.present? ? resident.phone2 : 'none'}
+        -else
+          .panel.panel-default#no_residents_panel
+            %p.text-center
+              ="There are currently no residents at #{@user.readable_address}"
+            %button.btn.btn-success.center-block{'data-toggle' => 'modal', 'data-target' => '#add_resident_modal'}
+              Add Resident
+
+
+
+
+
+=bootstrap_form_for @resident do |f|
+  .modal.fade#add_resident_modal
+    .modal-dialog
+      .modal-content
+        .modal-header
+          %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+          %h4.modal-title Add Resident
+        .modal-body
+          .add_resident_name=f.text_field :first_name, label: 'First Name'
+          .add_resident_name=f.text_field :last_name, label: 'Last Name'
+          .add_resident_email=f.email_field :email
+          =f.check_box :receive_notifications, label: "receive notifications at this email?"
+          .add_resident_phone=f.text_field :phone1, label: 'Phone 1'
+          .add_resident_phone=f.text_field :phone2, label: 'Phone 2'
+        .modal-footer
+          %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
+          %button.btn.btn-success{type: "submit"} Add Resident

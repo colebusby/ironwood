@@ -13,6 +13,7 @@ gem 'figaro'
 gem 'bootstrap-sass', '~> 3.0.2.0'
 gem 'haml'
 gem 'bootstrap_form'
+gem 'nested_form'
 gem 'font-awesome-sass'
 gem 'pg'
 ruby '2.0.0'
@@ -29,6 +30,7 @@ end
 group :test, :development do
   gem 'rspec-rails'
   gem 'pry'
+  gem 'pry-debugger'
 end
 
 group :production do

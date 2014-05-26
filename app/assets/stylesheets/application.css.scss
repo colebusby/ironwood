@@ -157,3 +157,54 @@ $container-large-desktop: 100%;
   width: 100%;
   min-height: 100px;
 }
+
+/* residents page */
+
+/*------------------------------------------------------------------*/
+
+#residents_main_panel{
+  .panel-heading *{
+    display: inline-block;
+  }
+}
+
+#no_residents_panel{
+  max-width: 370px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.add_resident_name{
+  width: 165px;
+}
+
+.add_resident_email{
+  width: 300px;
+}
+
+.add_resident_phone{
+  width: 120px;
+}
+
+.resident_data_panel{
+  max-width: 435px;
+  .panel-heading *{
+    display: inline-block;
+  }
+}
+
+/* edit residents page */
+
+/*------------------------------------------------------------------*/
+
+#edit_resident_panel{
+  padding: 15px;
+  .check_boxes{
+    display: inline-block;
+    margin-left: 15px;
+  }
+  #check_box_panel{
+    max-width: 550px;
+  }
+}
+

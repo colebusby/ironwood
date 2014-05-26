@@ -1,5 +1,5 @@
 class BoardPosition < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :resident, dependent: :destroy
 
   CEMENT = "cement"
   OVERALL_CONDITION_OF_CONDOS = "overall condition of condos"
@@ -10,7 +10,11 @@ class BoardPosition < ActiveRecord::Base
   ROOFING_AND_RAIN_GUTTERS = "roofing and rain gutters"
   SECRETARY = "secretary"
   RV_LOT = "R.V. Lot"
-  TREASURER = "Treaurer"
+  TREASURER = "Treasurer"
   INSURANCE = "Insurance"
+
+  def self.board_positions
+
+  end
 
 end

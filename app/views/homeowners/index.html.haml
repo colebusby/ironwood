@@ -18,22 +18,29 @@
       %tr
         / Residents
         %td
+          -user.residents.each do |resident|
+            %p="#{resident.first_name} #{resident.last_name}"
           -if user == current_user || current_user.has_role?(:admin)
-            =link_to "Edit", user_residents_path(user), class: 'btn btn-default btn-sm'
+            =link_to "Edit", residents_path(user_id: user.id), class: 'btn btn-default btn-sm'
 
         / Phone 1
         %td
+          -user.residents.each do |resident|
+            %p=resident.phone1
 
         / Phone 2
         %td
+          -user.residents.each do |resident|
+            %p=resident.phone2
 
         / Address
         %td
-          =user.address.upcase
+          =user.readable_address
 
         / E-mail
         %td
-          =user.email
+          -user.residents.each do |resident|
+            %p=resident.email
 
         -if current_user.has_role?(:admin)
           / Manage

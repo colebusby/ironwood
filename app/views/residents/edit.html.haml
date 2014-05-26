@@ -1,0 +1,53 @@
+.container
+  .row
+    .panel#edit_resident_panel
+      =bootstrap_form_for @resident do |f|
+        .add_resident_name=f.text_field :first_name, label: 'First Name'
+        .add_resident_name=f.text_field :last_name, label: 'Last Name'
+        .add_resident_email=f.email_field :email
+        =f.check_box :receive_notifications, label: "receive notifications at this email?"
+        .add_resident_phone=f.text_field :phone1, label: 'Phone 1'
+        .add_resident_phone=f.text_field :phone2, label: 'Phone 2'
+        -if current_user.has_role?(:admin) || current_user.has_role?(:board_member)
+          .panel.panel-default#check_box_panel
+            .panel-heading
+              %h4 Board Position(s)
+            .panel-body
+              .check_boxes
+                .form-group
+                  =check_box_tag("board_positions[]", 'CEMENT')
+                  Cement
+                .form-group
+                  =check_box_tag("board_positions[]", 'OVERALL_CONDITION_OF_CONDOS')
+                  Overall Condition of Condos
+                .form-group
+                  =check_box_tag("board_positions[]", 'GROUNDS_NORTH_SIDE')
+                  Grounds-North Side
+                .form-group
+                  =check_box_tag("board_positions[]", 'GROUND_SOUTH_SIDE')
+                  Grounds-South Side
+              .check_boxes
+                .form-group
+                  =check_box_tag("board_positions[]", 'SNOW_REMOVAL')
+                  Snow Removal
+                .form-group
+                  =check_box_tag("board_positions[]", 'PAINTING')
+                  Painting
+                .form-group
+                  =check_box_tag("board_positions[]", 'ROOFING_AND_RAIN_GUTTERS')
+                  Roofing and Rain Gutters
+                .form-group
+                  =check_box_tag("board_positions[]", 'SECRETARY')
+                  Secretary
+              .check_boxes
+                .form-group
+                  =check_box_tag("board_positions[]", 'RV_LOT')
+                  R.V. Lot
+                .form-group
+                  =check_box_tag("board_positions[]", 'TREASURER')
+                  Treasurer
+                .form-group
+                  =check_box_tag("board_positions[]", 'INSURANCE')
+                  Insurance
+        .form-group
+          %button.btn.btn-success{type: 'submit'} Update

@@ -20,7 +20,6 @@ class User < ActiveRecord::Base
     board_members
   end
 
-  has_many :board_positions
   has_many :residents
 
   def email_required?
@@ -29,6 +28,14 @@ class User < ActiveRecord::Base
 
   def email_changed?
     false
+  end
+
+  def readable_address
+    address = self.address
+    numbers = address.scan(/\d+/)
+    compass = address.split(/\d+/)
+    readable_address = "#{numbers[0]} #{compass[1].try(:upcase)} #{numbers[1]} #{compass[2].try(:upcase)}"
+    readable_address
   end
 
 end

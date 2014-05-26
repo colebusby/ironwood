@@ -5,9 +5,8 @@ Ironwood::Application.routes.draw do
   get 'home', to: 'home#index'
 
   #users
-  resources :users, only: [:show, :edit] do
-    resources :residents, only: [:index]
-  end
+  resources :users, only: [:show, :edit]
+  resources :residents
   devise_scope :user do
     match "sign_out", :to => "devise/sessions#destroy", via: [:delete]
   end
