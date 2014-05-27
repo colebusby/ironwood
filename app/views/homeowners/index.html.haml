@@ -3,13 +3,13 @@
     %th
       Resident(s)
     %th
-      Phone 1
-    %th
-      Phone 2
-    %th
       Address
     %th
       E-mail
+    %th
+      Phone 1
+    %th
+      Phone 2
     -if current_user.has_role?(:admin)
       %th
         Manage
@@ -23,6 +23,15 @@
           -if user == current_user || current_user.has_role?(:admin)
             =link_to "Edit", residents_path(user_id: user.id), class: 'btn btn-default btn-sm'
 
+        / Address
+        %td
+          =user.readable_address
+
+        / E-mail
+        %td
+          -user.residents.each do |resident|
+            %p=resident.email
+
         / Phone 1
         %td
           -user.residents.each do |resident|
@@ -32,15 +41,6 @@
         %td
           -user.residents.each do |resident|
             %p=resident.phone2
-
-        / Address
-        %td
-          =user.readable_address
-
-        / E-mail
-        %td
-          -user.residents.each do |resident|
-            %p=resident.email
 
         -if current_user.has_role?(:admin)
           / Manage

@@ -1,20 +1,16 @@
 class BoardPosition < ActiveRecord::Base
   belongs_to :resident, dependent: :destroy
 
-  CEMENT = "cement"
-  OVERALL_CONDITION_OF_CONDOS = "overall condition of condos"
-  GROUNDS_NORTH_SIDE = "grounds-North side"
-  GROUNDS_SOUTH_SIDE = "grounds-South side"
-  SNOW_REMOVAL = "snow removal"
-  PAINTING = "painting"
-  ROOFING_AND_RAIN_GUTTERS = "roofing and rain gutters"
-  SECRETARY = "secretary"
-  RV_LOT = "R.V. Lot"
-  TREASURER = "Treasurer"
-  INSURANCE = "Insurance"
-
-  def self.board_positions
-
-  end
+  CEMENT = 1
+  OVERALL_CONDITION_OF_CONDOS = 2
+  GROUNDS_NORTH_SIDE = 3
+  GROUNDS_SOUTH_SIDE = 4
+  SNOW_REMOVAL = 5
+  PAINTING = 6
+  ROOFING_AND_RAIN_GUTTERS = 7
+  SECRETARY = 8
+  RV_LOT = 9
+  TREASURER = 10
+  INSURANCE = 11
 
 end

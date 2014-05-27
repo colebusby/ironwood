@@ -15,39 +15,39 @@
             .panel-body
               .check_boxes
                 .form-group
-                  =check_box_tag("board_positions[]", 'CEMENT')
+                  =check_box_tag("board_positions[]", BoardPosition::CEMENT, @resident.has_board_position?(BoardPosition::CEMENT))
                   Cement
                 .form-group
-                  =check_box_tag("board_positions[]", 'OVERALL_CONDITION_OF_CONDOS')
+                  =check_box_tag("board_positions[]", BoardPosition::OVERALL_CONDITION_OF_CONDOS, @resident.has_board_position?(BoardPosition::OVERALL_CONDITION_OF_CONDOS))
                   Overall Condition of Condos
                 .form-group
-                  =check_box_tag("board_positions[]", 'GROUNDS_NORTH_SIDE')
+                  =check_box_tag("board_positions[]", BoardPosition::GROUNDS_NORTH_SIDE, @resident.has_board_position?(BoardPosition::GROUNDS_NORTH_SIDE))
                   Grounds-North Side
                 .form-group
-                  =check_box_tag("board_positions[]", 'GROUND_SOUTH_SIDE')
+                  =check_box_tag("board_positions[]", BoardPosition::GROUNDS_SOUTH_SIDE, @resident.has_board_position?(BoardPosition::GROUNDS_SOUTH_SIDE))
                   Grounds-South Side
               .check_boxes
                 .form-group
-                  =check_box_tag("board_positions[]", 'SNOW_REMOVAL')
+                  =check_box_tag("board_positions[]", BoardPosition::SNOW_REMOVAL, @resident.has_board_position?(BoardPosition::SNOW_REMOVAL))
                   Snow Removal
                 .form-group
-                  =check_box_tag("board_positions[]", 'PAINTING')
+                  =check_box_tag("board_positions[]", BoardPosition::PAINTING, @resident.has_board_position?(BoardPosition::PAINTING))
                   Painting
                 .form-group
-                  =check_box_tag("board_positions[]", 'ROOFING_AND_RAIN_GUTTERS')
+                  =check_box_tag("board_positions[]", BoardPosition::ROOFING_AND_RAIN_GUTTERS, @resident.has_board_position?(BoardPosition::ROOFING_AND_RAIN_GUTTERS))
                   Roofing and Rain Gutters
                 .form-group
-                  =check_box_tag("board_positions[]", 'SECRETARY')
+                  =check_box_tag("board_positions[]", BoardPosition::SECRETARY, @resident.has_board_position?(BoardPosition::SECRETARY))
                   Secretary
               .check_boxes
                 .form-group
-                  =check_box_tag("board_positions[]", 'RV_LOT')
+                  =check_box_tag("board_positions[]", BoardPosition::RV_LOT, @resident.has_board_position?(BoardPosition::RV_LOT))
                   R.V. Lot
                 .form-group
-                  =check_box_tag("board_positions[]", 'TREASURER')
+                  =check_box_tag("board_positions[]", BoardPosition::TREASURER, @resident.has_board_position?(BoardPosition::TREASURER))
                   Treasurer
                 .form-group
-                  =check_box_tag("board_positions[]", 'INSURANCE')
+                  =check_box_tag("board_positions[]", BoardPosition::INSURANCE, @resident.has_board_position?(BoardPosition::INSURANCE))
                   Insurance
         .form-group
           %button.btn.btn-success{type: 'submit'} Update

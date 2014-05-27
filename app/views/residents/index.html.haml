@@ -40,6 +40,7 @@
           %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
           %h4.modal-title Add Resident
         .modal-body
+          =f.hidden_field :user_id, value: @user.id
           .add_resident_name=f.text_field :first_name, label: 'First Name'
           .add_resident_name=f.text_field :last_name, label: 'Last Name'
           .add_resident_email=f.email_field :email

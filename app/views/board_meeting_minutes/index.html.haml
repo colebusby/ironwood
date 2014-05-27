@@ -1,0 +1,9 @@
+.container
+  .row
+    .panel.panel-default
+      .panel-heading
+        %h3 Board Meeting Minutes
+      .panel-body
+        =bootstrap_form_for @board_meeting_minute do |f|
+          Meeting Date
+          =f.date_field :meeting_date
