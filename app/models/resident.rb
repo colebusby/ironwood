@@ -22,4 +22,12 @@ class Resident < ActiveRecord::Base
     end
     board_members
   end
+
+  def positions
+    positions = []
+    self.board_positions.each do |board_position|
+      positions << board_position.title
+    end
+    positions
+  end
 end

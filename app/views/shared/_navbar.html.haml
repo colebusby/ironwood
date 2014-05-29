@@ -42,7 +42,7 @@
           %ul.nav_sign_in.nav.navbar-nav
             %li.dropdown.nav_menu_item
               %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
-                =current_user.email
+                =current_user.readable_address
                 %b.caret
               %ul.dropdown-menu
                 %li=link_to "Settings", current_user

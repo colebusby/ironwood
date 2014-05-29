@@ -1,9 +1,9 @@
 %table.table.table-hover
   %thead
     %th
-      Resident(s)
+      = link_to "Resident(s)", homeowners_path(last_name: true)
     %th
-      Address
+      = link_to "Address", homeowners_path(address: true)
     %th
       E-mail
     %th

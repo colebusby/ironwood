@@ -1,0 +1,9 @@
+=bootstrap_form_for @board_meeting_minute do |f|
+  Meeting Date
+  =f.date_field :meeting_date
+  -@board_members.each do |resident|
+    .form-group
+      =label_tag "name", "#{resident.first_name} #{resident.last_name}:"
+      =label_tag "positions", "#{resident.positions.join(", ").capitalize}."
+      =text_area_tag "reports[][#{resident.id}]", nil, class: 'form-control'
+  =f.submit "submit"

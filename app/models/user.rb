@@ -63,4 +63,8 @@ class User < ActiveRecord::Base
     end
   end
 
+  def self.directory_last_name_sort
+    self.find(:all, joins: :residents, order: 'residents.last_name').uniq
+  end
+
 end
