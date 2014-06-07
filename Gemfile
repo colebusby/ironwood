@@ -16,6 +16,7 @@ gem 'bootstrap_form'
 gem 'nested_form'
 gem 'font-awesome-sass'
 gem 'pg'
+gem 'bootstrap-wysihtml5-rails'
 ruby '2.0.0'
 
 gem 'devise'
@@ -36,4 +37,3 @@ end
 group :production do
   gem 'rails_12factor'
 end
-

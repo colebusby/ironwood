@@ -1,3 +1,11 @@
+/*
+
+*= require bootstrap-wysihtml5/b3
+
+*/
+
+
+
 /* defines */
 
 /*------------------------------------------------------------------*/
@@ -208,3 +216,16 @@ $container-large-desktop: 100%;
   }
 }
 
+/* minutes form */
+
+/*------------------------------------------------------------------*/
+
+#meeting_calendar{
+  width: 185px;
+}
+
+.minutes_text_area{
+  min-width: 200px;
+  max-width: 600px;
+  min-height: 400px;
+}

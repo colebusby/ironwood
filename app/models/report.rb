@@ -1,5 +1,5 @@
 class Report < ActiveRecord::Base
   belongs_to :board_meeting_minute
-  belongs_to :user
+  belongs_to :resident
 
 end

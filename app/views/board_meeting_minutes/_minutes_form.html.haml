@@ -1,9 +1,15 @@
 =bootstrap_form_for @board_meeting_minute do |f|
-  Meeting Date
-  =f.date_field :meeting_date
+  =f.date_field :meeting_date, label: "Meeting Date", id: 'meeting_calendar'
   -@board_members.each do |resident|
     .form-group
       =label_tag "name", "#{resident.first_name} #{resident.last_name}:"
       =label_tag "positions", "#{resident.positions.join(", ").capitalize}."
-      =text_area_tag "reports[][#{resident.id}]", nil, class: 'form-control'
+      =text_area_tag "reports[][#{resident.id}]", nil, class: 'form-control wysihtml5 minutes_text_area'
   =f.submit "submit"
+:javascript
+  $('.wysihtml5').each(function(i, elem) {
+    $(elem).wysihtml5();
+  });
+  $(document).on('page:load', function(){
+    window['rangy'].initialized = false
+  });
