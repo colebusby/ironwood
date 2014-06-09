@@ -6,6 +6,7 @@
       =label_tag "positions", "#{resident.positions.join(", ").capitalize}."
       =text_area_tag "reports[][#{resident.id}]", nil, class: 'form-control wysihtml5 minutes_text_area'
   =f.submit "submit"
+
 :javascript
   $('.wysihtml5').each(function(i, elem) {
     $(elem).wysihtml5();

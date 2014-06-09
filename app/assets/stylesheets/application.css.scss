@@ -229,3 +229,32 @@ $container-large-desktop: 100%;
   max-width: 600px;
   min-height: 400px;
 }
+
+/* board meeting minutes index */
+
+/*------------------------------------------------------------------*/
+
+.minutes_panels{
+  width: 200px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.meeting_links{
+  display: block;
+  font-size: 24px;
+  padding-left: 10px;
+}
+
+.meeting_year{
+  width: 78px;
+  margin: auto;
+}
+
+.year_links{
+  font-size: 32px;
+}
+
+.meetings{
+  display: none;
+}

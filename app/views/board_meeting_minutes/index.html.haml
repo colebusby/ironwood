@@ -1,7 +1,17 @@
+= javascript_include_tag "board_meeting_index"
+
 .container
   .row
     .panel.panel-default
       .panel-heading
         %h3 Board Meeting Minutes
         = link_to "New", new_board_meeting_minute_path, class: 'btn btn-success'
-      .panel-body
+    .container
+      .board_meeting_minute_year_panels
+        - @meeting_minutes_by_years.each do |year_meetings|
+          .panel.panel-default.minutes_panels
+            .meeting_year.center-block
+              = link_to year_meetings.first, nil, class: 'year_links'
+            .meetings{id: "#{year_meetings.first}"}
+              - year_meetings.last.reverse.each do |board_meeting_minute|
+                = link_to board_meeting_minute.meeting_date.strftime("%B %d"), board_meeting_minute_path(board_meeting_minute), class: 'meeting_links'
