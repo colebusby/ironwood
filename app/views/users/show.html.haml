@@ -1,1 +1,12 @@
-=@user.email
+.container
+  .container
+    .row
+      %h2="Clear all residents from #{@user.readable_address}"
+      %ul
+        -@user.residents.each do |resident|
+          %li="#{resident.first_name} #{resident.last_name}"
+      %button.btn.btn-warning
+        Clear Residents
+    .row
+      %h2 Change Password
+      = link_to "Change Password", edit_user_password_path, class: 'btn btn-warning'

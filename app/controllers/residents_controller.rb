@@ -38,6 +38,13 @@ class ResidentsController < ApplicationController
     end
   end
 
+  def destroy
+    @resident = Resident.find(params[:id])
+    @resident.destroy
+    flash[:success] = "#{@resident.first_name} #{@resident.last_name} has been removed from #{@resident.user.readable_address}"
+    redirect_to residents_path(user_id: @resident.user.id)
+  end
+
   private
 
   def find_user

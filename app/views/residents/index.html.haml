@@ -12,7 +12,10 @@
             .panel.panel-success.resident_data_panel
               .panel-heading
                 %h4="#{resident.first_name} #{resident.last_name}"
-                =link_to "edit", edit_resident_path(resident), class: 'pull-right btn btn-default'
+                .resident_links.pull-right
+                  =link_to "edit", edit_resident_path(resident), class: 'btn btn-default'
+                  = link_to resident_path(resident), method: 'DELETE' do
+                    %span.glyphicon.glyphicon-trash
               .panel-body
                 %p Email: #{resident.phone1.present? ? resident.email : 'none'}
                 -if resident.receive_notifications
