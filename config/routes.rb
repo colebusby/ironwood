@@ -1,11 +1,14 @@
 Ironwood::Application.routes.draw do
-  devise_for :admins
   devise_for :users
   root to: 'home#index'
   get 'home', to: 'home#index'
 
   #users
-  resources :users, only: [:show, :edit]
+  resources :users, only: [:show] do
+    collection do
+      patch 'update_password'
+    end
+  end
   resources :residents
   devise_scope :user do
     match "sign_out", :to => "devise/sessions#destroy", via: [:delete]

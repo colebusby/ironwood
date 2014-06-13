@@ -9,4 +9,15 @@
         Clear Residents
     .row
       %h2 Change Password
-      = link_to "Change Password", edit_user_password_path, class: 'btn btn-warning'
+      = form_for(@user, :url => { :action => "update_password" } ) do |f|
+        = hidden_field_tag :id, @user.id
+        .field.form-group
+          = f.label :password, "Password"
+          %br/
+          = f.password_field :password, :autocomplete => "off", class: 'form-control change_pass_fields'
+        .field.form-group
+          = f.label :password_confirmation
+          %br/
+          = f.password_field :password_confirmation, class: 'form-control change_pass_fields'
+        .action_container.form-group
+          = f.submit "Change Password", class: 'btn btn-warning'
