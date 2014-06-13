@@ -11,4 +11,12 @@ class BoardMeetingMinute < ActiveRecord::Base
     by_years_hash
   end
 
+  def readable_month_day
+    self.meeting_date.strftime("%B %d")
+  end
+
+  def readable_date
+    self.meeting_date.strftime("%B %d, %Y")
+  end
+
 end

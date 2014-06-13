@@ -30,4 +30,12 @@ class Resident < ActiveRecord::Base
     end
     positions
   end
+
+  def title
+    "#{self.positions.join(", ").capitalize}."
+  end
+
+  def full_name
+    "#{resident.first_name} #{resident.last_name}"
+  end
 end

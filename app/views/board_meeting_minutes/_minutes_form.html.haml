@@ -2,8 +2,8 @@
   =f.date_field :meeting_date, label: "Meeting Date", id: 'meeting_calendar'
   -@board_members.each do |resident|
     .form-group
-      =label_tag "name", "#{resident.first_name} #{resident.last_name}:"
-      =label_tag "positions", "#{resident.positions.join(", ").capitalize}."
+      =label_tag "name", "#{resident.full_name}:"
+      =label_tag "positions", resident.title
       =text_area_tag "reports[][#{resident.id}]", nil, class: 'form-control wysihtml5 minutes_text_area'
   =f.submit "submit"
 
