@@ -36,6 +36,6 @@ class Resident < ActiveRecord::Base
   end
 
   def full_name
-    "#{resident.first_name} #{resident.last_name}"
+    "#{self.first_name} #{self.last_name}"
   end
 end

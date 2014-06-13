@@ -145,12 +145,10 @@ $container-large-desktop: 100%;
   opacity: .8;
 }
 
-.board_pic{
-  width: 100px;
-  height: 100px;
-  border-radius: 100%;
-  background-color:grey;
-  vertical-align: top;
+.board_member_contact {
+  p {
+    padding-left: 15px;
+  }
 }
 
 .contact_board{
@@ -274,10 +272,17 @@ $container-large-desktop: 100%;
 .bmm_show_page{
   padding-top: 30px;
   padding-bottom: 30px;
+  background-image: image-url("clock_by_jim_elliman.JPG");
+  min-height: 1200px;
 }
 
 #bmm_show_panel{
-  width: 1000px;
+  max-width: 1000px;
   margin: auto;
   margin-top: 30px;
+  opacity: .88;
+}
+
+.report_description {
+  padding-left: 30px;
 }

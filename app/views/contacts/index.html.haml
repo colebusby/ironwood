@@ -6,13 +6,20 @@
           %h3.text-center
             Contact
         .panel-body
-          -if current_user && (current_user.has_role?(:home_owner) || current_user.has_role?(:admin))
+          -if current_user
+            -@board_members.each do |resident|
+              .board_member_contact
+                %h4
+                  =resident.title
+                %p
+                  =resident.full_name
+                %p
+                  =resident.phone1
           -else
-            .board_pic.text-center.contact_board
-              =image_tag 'cole.JPG', class: 'board_pic'
             %p.contact_board#contact_board_text
               Association President<br>
-              John Doe<br>
+              Harvey Dickerson<br>
+              801-479-9863
             %h4.clear
               Want to know more? Please send me your question and I will get back to you as soon as I can:
             =form_tag send_question_path do
