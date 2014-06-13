@@ -15,10 +15,24 @@ class UsersController < ApplicationController
     end
   end
 
+  def new
+    @user = User.new
+  end
+
+  def create
+    @user = User.new(user_params)
+    if @user.save
+      flash[:success] = "#{@user.readable_address} successfuly created."
+      redirect_to new_user_path
+    else
+      render 'new'
+    end
+  end
+
   private
 
   def user_params
     # NOTE: Using `strong_parameters` gem
-    params.required(:user).permit(:password, :password_confirmation)
+    params.required(:user).permit(:address, :password, :password_confirmation)
   end
 end

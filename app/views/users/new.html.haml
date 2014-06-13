@@ -1,0 +1,10 @@
+=form_for @user do |f|
+  %h1
+    Add a new user
+  =f.label :address
+  =f.text_field :address
+  =f.label :password
+  =f.password_field :password
+  =f.label :password_confirmation
+  =f.password_field :password_confirmation
+  =f.submit "Add User", class: 'btn btn-default'
