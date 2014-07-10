@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def show
+    # meaningless comment so I can push to heroku
     @user = User.find(params[:id]) if params[:id]
   end
 
