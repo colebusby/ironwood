@@ -291,3 +291,39 @@ $container-large-desktop: 100%;
 .report_description {
   padding-left: 30px;
 }
+
+/* policies index */
+
+/*------------------------------------------------------------------*/
+
+#policies_index_page{
+  background-image: image-url('gavel_by_jkbeitz.jpg');
+  min-height: 1000px;
+}
+
+/* parking index */
+
+/*------------------------------------------------------------------*/
+
+#parking_index_page{
+  background-image: image-url('car_by_peter_firminger.jpg');
+  min-height: 1000px;
+}
+
+/* hoa dues index */
+
+/*------------------------------------------------------------------*/
+
+#hoa_dues_index_page{
+  background-image: image-url('exchange_money_conversion_to_foreign_currency_by_epsos_de.jpg');
+  min-height: 1000px;
+}
+
+/* budget index */
+
+/*------------------------------------------------------------------*/
+
+#budget_index_page{
+  background-image: image-url('calculating_taxes_up_and_down_by_ken_teegardin.jpg');
+  min-height: 1000px;
+}

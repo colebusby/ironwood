@@ -23,6 +23,11 @@ gem 'devise'
 gem 'cancancan', '~> 1.7'
 gem 'role_model'
 
+# Uploads
+gem 'carrierwave'
+gem 'fog'
+gem 'mini_magick'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
