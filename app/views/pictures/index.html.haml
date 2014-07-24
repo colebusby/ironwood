@@ -1,0 +1,16 @@
+#pictures_index_page
+  .container
+    .container
+      -if current_user && current_user.has_role?(:admin)
+        %h1
+          Add Image
+        .row
+          =bootstrap_form_for @picture do |f|
+            =f.text_field :name, id: 'picture_name'
+            =f.file_field :image_file, class: 'btn btn-file'
+            =f.submit "Upload Picture"
+      %h1
+        Pictures
+      .row
+        -@pictures.each do |picture|
+          =image_tag(picture.image_file)
