@@ -5,6 +5,8 @@
     %th
       = link_to "Address", homeowners_path(address: true)
     %th
+      = link_to "Unit #", homeowners_path(unit_order: true)
+    %th
       E-mail
     %th
       Phone 1
@@ -26,6 +28,10 @@
         / Address
         %td
           =user.readable_address
+
+        / Unit
+        %td
+          =user.unit
 
         / E-mail
         %td
