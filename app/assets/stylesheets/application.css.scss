@@ -43,6 +43,9 @@ $container-large-desktop: 100%;
   width: 100%;
   min-height: 1200px;
   background-image: image-url('home_img2.jpg');
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-color: #000;
 
   .home_main_images{
     width: 100%
