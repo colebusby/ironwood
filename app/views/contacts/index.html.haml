@@ -16,22 +16,9 @@
                 %p
                   =resident.phone1
           -else
-            %p.contact_board#contact_board_text
+            %h4.contact_board#contact_board_text
               Association President<br>
               Harvey Dickerson<br>
               801-479-9863
             %h4.clear
-              Want to know more? Please send me your question and I will get back to you as soon as I can:
-            =form_tag send_question_path do
-              %form
-                .form-group
-                  =label_tag :name, 'Your Name'
-                  =text_field_tag :name
-                .form-group
-                  =label_tag :email, 'Your Email'
-                  =text_field_tag :email, nil, type: 'email'
-                .form-group
-                  =label_tag :question, 'Your Question'
-                  =text_area_tag :question, nil, id: 'contact_question_area'
-                .form-group
-                  =submit_tag 'Send Question', class: 'btn'
+              Want to know more about our community? Please feel free to contact me with your questions.
