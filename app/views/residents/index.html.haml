@@ -18,10 +18,6 @@
                     %span.glyphicon.glyphicon-trash
               .panel-body
                 %p Email: #{resident.phone1.present? ? resident.email : 'none'}
-                -if resident.receive_notifications
-                  %p.text-success this email receives notifications
-                -else
-                  %p.text-danger this email does not receive notifications
                 %p Phone 1: #{resident.phone1.present? ? resident.phone1 : 'none'}
                 %p Phone 2: #{resident.phone2.present? ? resident.phone2 : 'none'}
         -else
@@ -47,7 +43,6 @@
           .add_resident_name=f.text_field :first_name, label: 'First Name'
           .add_resident_name=f.text_field :last_name, label: 'Last Name'
           .add_resident_email=f.email_field :email
-          =f.check_box :receive_notifications, label: "receive notifications at this email?"
           .add_resident_phone=f.text_field :phone1, label: 'Phone 1'
           .add_resident_phone=f.text_field :phone2, label: 'Phone 2'
         .modal-footer
