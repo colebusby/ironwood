@@ -43,10 +43,14 @@ class User < ActiveRecord::Base
 
   def readable_address
     address = self.address
-    numbers = address.scan(/\d+/)
-    compass = address.split(/\d+/)
-    readable_address = "#{numbers[0]} #{compass[1].try(:upcase)} #{numbers[1]} #{compass[2].try(:upcase)}"
-    readable_address
+    if address
+      numbers = address.scan(/\d+/)
+      compass = address.split(/\d+/)
+      readable_address = "#{numbers[0]} #{compass[1].try(:upcase)} #{numbers[1]} #{compass[2].try(:upcase)}"
+      readable_address
+    else
+      return "Not Available"
+    end
   end
 
   def handle_board_member_role
