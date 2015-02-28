@@ -1,1 +1,16 @@
 #budget_index_page
+  .container
+    .container
+      -if current_user && current_user.has_role?(:admin)
+        %h1
+          Add Budget(pdf files only)
+        .row
+          =bootstrap_form_for @budget do |f|
+            =f.text_field :name, id: 'budget_name'
+            =f.file_field :upload, class: 'btn btn-file'
+            =f.submit "Upload Budget"
+      %h1
+        Budgets
+      .row
+        -@budgets.each do |budget|
+          =link_to budget.name, budget.upload
