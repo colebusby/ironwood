@@ -1,6 +1,6 @@
 class CreateBudgetModel < ActiveRecord::Migration
   def change
-    create_table :budgets do |t|
+    create_table :budget_models do |t|
       t.string :name
       t.string :upload
 
