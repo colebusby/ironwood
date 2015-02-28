@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20150228182248) do
     t.integer  "resident_id"
   end
 
-  create_table "budget_models", force: true do |t|
+  create_table "budgets", force: true do |t|
     t.string   "name"
     t.string   "upload"
     t.datetime "created_at"
