@@ -8,7 +8,7 @@ class BudgetsController < ApplicationController
 
   def create
     budget = Budget.new(budget_params)
-    if picture.save
+    if budget.save
       flash[:success] = "Budget uploaded"
       redirect_to budgets_path
     else
@@ -20,6 +20,6 @@ class BudgetsController < ApplicationController
   private
 
   def budget_params
-    params.require(:budget).permit(:upload)
+    params.require(:budget).permit(:name, :upload)
   end
 end
