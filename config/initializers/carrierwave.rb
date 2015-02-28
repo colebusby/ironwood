@@ -6,6 +6,7 @@ CarrierWave.configure do |config|
       :aws_access_key_id      => ENV['S3_KEY'],                        # required
       :aws_secret_access_key  => ENV['S3_SECRET'],                        # required
       :region                 => 'us-west-2',                  # optional, defaults to 'us-east-1'
+      :s3_endpoint            => 's3.amazonaws.com'
     }
     config.fog_directory  = ENV['PICTURES_BUCKET']                     # required
   else
