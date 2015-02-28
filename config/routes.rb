@@ -33,7 +33,7 @@ Ironwood::Application.routes.draw do
 
   #FAQ
   resources :faqs, only: [:index]
-  resources :pictures, only: [:index]
+  resources :pictures, only: [:index, :create]
   get 'upkeep', to: 'upkeep#index'
 
 end
