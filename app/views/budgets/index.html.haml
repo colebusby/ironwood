@@ -12,5 +12,5 @@
       %h1
         Budgets
       .row
-        -@budgets.each do |budget|
-          =link_to budget.name, budget.upload
+        -@budgets.each do |budget_oject|
+          =link_to budget_object.name, budget_object.upload
