@@ -13,4 +13,4 @@
         Budgets
       .row
         -@budgets.each do |budget|
-          =link_to budget.name, nil
+          =link_to budget.name, budget.upload.url
