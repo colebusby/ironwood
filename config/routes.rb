@@ -29,7 +29,7 @@ Ironwood::Application.routes.draw do
   #Homeowners
   resources :board_meeting_minutes
   resources :homeowners, only: [:index]
-  resources :budgets, only: [:index, :create, :delete]
+  resources :budgets, only: [:index, :create, :destroy]
 
   #FAQ
   resources :faqs, only: [:index]
