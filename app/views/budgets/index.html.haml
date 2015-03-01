@@ -14,3 +14,5 @@
       .row
         -@budgets.each do |budget|
           =link_to budget.name, budget.upload.url
+          -if current_user && current_user.has_role?(:admin)
+            = link_to 'X', budget, confirm: 'Are you sure you want to delete this file?', method: :delete, class: 'text-danger'

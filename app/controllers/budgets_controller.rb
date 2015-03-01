@@ -17,6 +17,13 @@ class BudgetsController < ApplicationController
     end
   end
 
+  def destroy
+     budget = Budget.find(params[:id])
+     budget.destroy
+     flash[:notice] = "File has been deleted."
+     redirect_to budgets_path
+  end
+
   private
 
   def budget_params
