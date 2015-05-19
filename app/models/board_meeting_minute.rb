@@ -1,6 +1,8 @@
 class BoardMeetingMinute < ActiveRecord::Base
   has_many :reports
 
+  validates :meeting_date, presence: true
+
   def self.by_years
     by_years_hash = {}
     self.order("meeting_date DESC").all.each do |board_meeting_minute|
