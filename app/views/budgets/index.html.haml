@@ -3,7 +3,7 @@
     .container
       .panel.panel-default.pool_panels
         .panel-body
-          -if current_user && current_user.has_role?(:admin)
+          -if current_user && current_user.admin_or_board?
             %h1
               Add Budget(pdf files only)
             =bootstrap_form_for @budget do |f|

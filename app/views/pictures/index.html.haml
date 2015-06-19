@@ -1,7 +1,7 @@
 #pictures_index_page
   .container
     .container
-      -if current_user && current_user.has_role?(:admin)
+      -if current_user && current_user.admin_or_board?
         %h1
           Add Image
         .row
