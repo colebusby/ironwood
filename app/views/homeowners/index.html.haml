@@ -22,7 +22,7 @@
         %td
           -user.residents.each do |resident|
             %p="#{resident.first_name} #{resident.last_name}"
-          -if user == current_user || current_user.has_role?(:admin)
+          -if user == current_user || current_user.admin_or_board?
             =link_to "Edit", residents_path(user_id: user.id), class: 'btn btn-default btn-sm'
 
         / Address
@@ -48,7 +48,7 @@
           -user.residents.each do |resident|
             %p=resident.phone2
 
-        -if current_user.has_role?(:admin)
+        -if current_user.admin_or_board?
           / Manage
           %td
             =link_to "Manage", user_path(user), class: 'btn btn-default'
