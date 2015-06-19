@@ -22,7 +22,8 @@ class ResidentsController < ApplicationController
 
   def update
     @resident = Resident.find(params[:id])
-    if @resident.update_attributes(resident_params)
+    if resident_params.present? || params[:board_positions].present?
+      @resident.update_attributes(resident_params) if resident_params.present?
       @resident.clear_board_positions
       if params[:board_positions].present?
         params[:board_positions].each do |board_position_id|
