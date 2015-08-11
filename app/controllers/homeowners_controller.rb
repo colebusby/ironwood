@@ -8,7 +8,7 @@ class HomeownersController < ApplicationController
     else
       session[:address] = !session[:address] if params[:address]
       if session[:address]
-        @user = User.by_street
+        @users = User.by_street
       else
         @users = User.order('address')
       end
