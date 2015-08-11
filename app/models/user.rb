@@ -20,10 +20,11 @@ class User < ActiveRecord::Base
     board_members
   end
 
+  def self.by_street
+    self.sort_by{|user| user.address.scan(/\d+/).last + user.address.last}
+  end
+
   has_many :residents
-
-
-
 
   def email_required?
     false
@@ -32,10 +33,6 @@ class User < ActiveRecord::Base
   def email_changed?
     false
   end
-
-
-
-
 
   def admin_or_board?
     self.has_role?(:admin) || self.has_role?(:board_member)

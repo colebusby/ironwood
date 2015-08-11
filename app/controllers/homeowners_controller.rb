@@ -1,15 +1,17 @@
 class HomeownersController < ApplicationController
   before_action :authenticate_user!
   def index
-    users_last_name = User.directory_last_name_sort
-    users_address = User.order('address')
-    users_unit = User.order('unit')
     if params[:last_name]
-      @users = users_last_name
+      @users = User.directory_last_name_sort
     elsif params[:unit_order]
-      @users = users_unit
+      @users = User.order('unit')
     else
-      @users = users_address
+      session[:address] = !session[:address] if params[:address]
+      if session[:address]
+        @user = User.by_street
+      else
+        @users = User.order('address')
+      end
     end
   end
 end
