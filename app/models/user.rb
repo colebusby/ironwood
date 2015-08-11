@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
   end
 
   def self.by_street
-    self.sort_by{|user| user.address.scan(/\d+/).last + user.address.last}
+    self.all.sort_by{|user| user.address.scan(/\d+/).last + user.address.last}
   end
 
   has_many :residents
