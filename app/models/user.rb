@@ -22,9 +22,15 @@ class User < ActiveRecord::Base
 
   def self.by_street
     self.all.sort_by do |user|
-      street_number = user.address.scan(/\d+/).last
-      street_number = "0" + street_number if street_number.length < 4
-      street_number + user.address.last
+      i = 9001
+      if user.address
+        street_number = user.address.scan(/\d+/).last
+        street_number = "0" + street_number if street_number.length < 4
+        street_number + user.address.last
+      else
+        street_number = i.to_s
+        i++
+      end
     end
   end
 
