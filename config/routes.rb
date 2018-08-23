@@ -4,7 +4,7 @@ Ironwood::Application.routes.draw do
   get 'home', to: 'home#index'
 
   #users
-  resources :users, only: [:show, :new, :create] do
+  resources :users, only: [:show] do
     collection do
       patch 'update_password'
     end
