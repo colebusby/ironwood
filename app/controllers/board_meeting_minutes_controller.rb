@@ -3,7 +3,7 @@ class BoardMeetingMinutesController < ApplicationController
   def index
     @meeting_minutes_by_years = BoardMeetingMinute.by_years
     @board_meeting_minute = BoardMeetingMinute.new
-    @board_meeting_minutes = BoardMeetingMinute.all
+    @board_meeting_minutes = BoardMeetingMinute.chrono_order
   end
 
   def new

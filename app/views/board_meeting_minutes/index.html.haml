@@ -1,5 +1,3 @@
--#= javascript_include_tag "board_meeting_index"
-
 #board_meeting_minute_index_page
   .container
     .container
@@ -19,18 +17,6 @@
               =link_to board_meeting_minute.readable_date, board_meeting_minute.upload.url
               -if current_user && current_user.admin_or_board?
                 = link_to 'X', board_meeting_minute, confirm: 'Are you sure you want to delete this file?', method: :delete, class: 'text-danger'
-          .container
-            .board_meeting_minute_year_panels
-              - @meeting_minutes_by_years.each do |year_meetings|
-                .panel.panel-default.minutes_panels
-                  .meeting_year.center-block
-                    = link_to year_meetings.first, nil, class: 'year_links'
-                  .meetings{id: "#{year_meetings.first}"}
-                    - year_meetings.last.reverse.each do |board_meeting_minute|
-                      = link_to board_meeting_minute.readable_month_day, board_meeting_minute.upload.url, class: 'meeting_links'
-                      -if current_user && current_user.admin_or_board?
-                        = link_to 'X', board_meeting_minute, confirm: 'Are you sure you want to delete this file?', method: :delete, class: 'text-danger'
-
 
 
 
@@ -40,6 +26,7 @@
 
 -# Old code for qwerty form
 
+-#= javascript_include_tag "board_meeting_index"
 
 -#.container
   .row

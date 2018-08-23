@@ -14,6 +14,10 @@ class BoardMeetingMinute < ActiveRecord::Base
     by_years_hash
   end
 
+  def self.chrono_order
+    self.order("meeting_date DESC").all
+  end
+
   def readable_month_day
     self.meeting_date.strftime("%B %d")
   end
