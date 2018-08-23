@@ -15,3 +15,13 @@
 //= require bootstrap
 //= require turbolinks
 //= require bootstrap-wysihtml5/b3
+
+$(document).ready(function(){
+  var d = new Date();
+  var current_year = "#" + d.getFullYear().toString();
+  $(current_year).show();
+  $(".year_links").on("click", function(event){
+    event.preventDefault();
+    $(this).parent().parent().find(".meetings").slideToggle();
+  });
+});
