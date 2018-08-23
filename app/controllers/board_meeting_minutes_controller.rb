@@ -2,6 +2,8 @@ class BoardMeetingMinutesController < ApplicationController
   before_action :authenticate_user!
   def index
     @meeting_minutes_by_years = BoardMeetingMinute.by_years
+    @board_meeting_minute = BoardMeetingMinute.new
+    @board_meeting_minutes = BoardMeetingMinute.all
   end
 
   def new
@@ -10,6 +12,17 @@ class BoardMeetingMinutesController < ApplicationController
   end
 
   def create
+    board_meeting_minute = BoardMeetingMinute.new(board_meeting_minute_params)
+    if board_meeting_minute.save
+      flash[:success] = "Minutes uploaded"
+      redirect_to board_meeting_minutes_path
+    else
+      flash[:error] = "Upload failed"
+      render board_meeting_minutes_path
+    end
+  end
+
+  def create_old
     board_meeting_minute = BoardMeetingMinute.new(board_meeting_minute_params)
     if board_meeting_minute.save
       params[:reports].first.each do |report|

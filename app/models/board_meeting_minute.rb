@@ -1,4 +1,5 @@
 class BoardMeetingMinute < ActiveRecord::Base
+  mount_uploader :upload, MinutesUploader
   has_many :reports
 
   validates :meeting_date, presence: true

@@ -27,7 +27,7 @@ Ironwood::Application.routes.draw do
   post 'send_question', to: 'contacts#send_question'
 
   #Homeowners
-  resources :board_meeting_minutes
+  resources :board_meeting_minutes, only: [:index, :create, :destroy]
   resources :homeowners, only: [:index]
   resources :budgets, only: [:index, :create, :destroy]
 

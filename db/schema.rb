@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150228182248) do
+ActiveRecord::Schema.define(version: 20180823170547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20150228182248) do
     t.datetime "meeting_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "upload"
   end
 
   create_table "board_positions", force: true do |t|

@@ -1,6 +1,34 @@
-= javascript_include_tag "board_meeting_index"
+#board_meeting_minute_index_page
+  .container
+    .container
+      .panel.panel-default.pool_panels
+        .panel-body
+          -if current_user && current_user.admin_or_board?
+            %h1
+              Add Minutes(pdf files only)
+            =bootstrap_form_for @board_meeting_minute do |f|
+              =f.date_field :meeting_date, id: 'minutes_date'
+              =f.file_field :upload, class: 'btn btn-file'
+              =f.submit "Upload Minutes"
+          %h1
+            Minutes
+          -@board_meeting_minutes.each do |board_meeting_minute|
+            %p
+              =link_to board_meeting_minute.readable_date, board_meeting_minute.upload.url
+              -if current_user && current_user.admin_or_board?
+                = link_to 'X', board_meeting_minute, confirm: 'Are you sure you want to delete this file?', method: :delete, class: 'text-danger'
 
-.container
+
+
+
+
+
+
+-# Old code for qwerty form
+
+-#= javascript_include_tag "board_meeting_index"
+
+-#.container
   .row
     -if current_user && current_user.admin_or_board?
       .panel.panel-default
