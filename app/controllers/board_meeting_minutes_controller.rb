@@ -41,9 +41,17 @@ class BoardMeetingMinutesController < ApplicationController
     @board_meeting_minute = BoardMeetingMinute.find(params[:id])
   end
 
+  def destroy
+     board_meeting_minute = BoardMeetingMinute.find(params[:id])
+     board_meeting_minute.destroy
+     flash[:notice] = "File has been deleted."
+     redirect_to board_meeting_minutes_path
+  end
+
+
   private
 
   def board_meeting_minute_params
-    params.require(:board_meeting_minute).permit(:meeting_date)
+    params.require(:board_meeting_minute).permit(:meeting_date, :upload)
   end
 end
